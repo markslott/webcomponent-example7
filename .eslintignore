@@ -3,4 +3,6 @@
 **/lwc/**/*.json
 **/lwc/**/*.svg
 **/lwc/**/*.xml
+**/reactApp/**
+**/staticresources/**
 .sfdx
