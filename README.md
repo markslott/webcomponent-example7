@@ -7,7 +7,8 @@ React is running inside the LWC rather than running in an iframe in an aura comp
 
 
 ```sfdx force:auth:web:login --setdefaultdevhubusername --setalias my-hub-org
-sfdx force:org:create -f ./config/project-scratch-def.json
+sfdx force:org:create -f ./config/project-scratch-def.json -a webcomponent7test
+sfdx force:config:set defaultusername=webcomponent7test
 npm install
 npm run deploy
 sfdx force:org:open
