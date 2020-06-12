@@ -1,0 +1,47 @@
+{
+  "name": "salesforce-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Salesforce App",
+  "main": "index.js",
+  "scripts": {
+    "lint": "npm run lint:lwc",
+    "lint:lwc": "eslint force-app/main/default/lwc",
+    "test": "npm run test:unit",
+    "test:unit": "sfdx-lwc-jest",
+    "test:unit:watch": "sfdx-lwc-jest --watch",
+    "test:unit:debug": "sfdx-lwc-jest --debug",
+    "test:unit:coverage": "sfdx-lwc-jest --coverage",
+    "build": "npx webpack reactApp/src && cp dist/main.js force-app/main/default/staticresources/app.js",
+    "deploy": "npm run build && sfdx force:source:push",
+    "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+    "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\""
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@prettier/plugin-xml": "^0.7.2",
+    "@salesforce/eslint-config-lwc": "^0.5.0",
+    "@salesforce/sfdx-lwc-jest": "^0.7.1",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.3",
+    "eslint": "^6.8.0",
+    "prettier": "^2.0.5",
+    "prettier-plugin-apex": "^1.4.0",
+    "react": "16.8.3",
+    "react-dom": "^16.8.6",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "@salesforce-ux/design-system": "^2.9.4",
+    "@salesforce/design-system-react": "^0.10.9",
+    "react": "16.8.3",
+    "react-dom": "^16.8.6"
+  }
+}
